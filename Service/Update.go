@@ -67,7 +67,7 @@ func (ts *TelegramService) Update(data []byte) ([]byte, error) {
 	case Update.EditedChannelPost != nil:
 		return ts.EditedChannelPostService(*Update.Message)
 	case Update.EditedMessage != nil:
-		return ts.EditedMessageService(*Update.Message)
+		return ts.EditedMessageService(*Update.EditedMessage)
 	case Update.InlineQuery != nil:
 		return ts.InlineQueryService(*Update.InlineQuery)
 	case Update.Message != nil:
