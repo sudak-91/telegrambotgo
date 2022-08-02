@@ -20,10 +20,7 @@ type SendMessage struct {
 	Text   string `json:"text"`
 }
 
-func SendMessageMethod(SecretKey string, ChatId int64, Text string) error {
-	var Message SendMessage
-	Message.ChatID = ChatId
-	Message.Text = Text
+func SendMessageMethod(SecretKey string, Message SendMessage) error {
 	URL := fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", SecretKey)
 	postBody, err := json.Marshal(Message)
 	if err != nil {
@@ -47,5 +44,4 @@ func SendMessageMethod(SecretKey string, ChatId int64, Text string) error {
 		return fmt.Errorf("Has erros: %s", respBody)
 	}
 	return nil
-
 }

@@ -2,6 +2,7 @@ package keyboardmaker
 
 import types "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
 
+//InlineCommandKeyboard создает Inline клавиатуру для сообщения
 type InlineCommandKeyboard struct {
 	types.TelegramInlineKeyboardMarkup
 }
@@ -14,6 +15,7 @@ func (k *InlineCommandKeyboard) MakeGrid(raw int, column int) {
 
 }
 
+//AddButton добавляется кнопку с CommandCallback
 func (k *InlineCommandKeyboard) AddButton(text string, commandcallback string, raw int, column int) {
 	var Button types.TelegramInlineKeyboardButton
 	Button.Text = text
