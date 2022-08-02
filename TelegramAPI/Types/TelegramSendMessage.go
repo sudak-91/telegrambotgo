@@ -1,6 +1,7 @@
 package types
 
 //@TODO Generic for ReplyMarkUp
+
 type TelegramSendMessage struct {
 	Method                   string                        `json:"method"`
 	ChatID                   int64                         `json:"chat_id"`
