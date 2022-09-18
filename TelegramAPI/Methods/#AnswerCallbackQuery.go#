@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -15,19 +16,19 @@ type AnswerCallBackQuery struct {
 	CasheTime       int    `json:"cache_time,omitempty"`
 }
 
-func AnswerCallBackQueryMethod(Key string, answerCallBackQuery AnswerCallBackQuery) error {
+func AnswerCallBackQueryMethod(Key string,answerCallbackQuery AnswerCallBackQuery) ([]byte, error) {
 	URL := fmt.Sprintf("https://api.telegram.org/bot%s/answerCallbackQuery", Key)
-	postBody, err := json.Marshal(answerCallBackQuery)
+	postBody, err := json.Marshal(Answer)
 	if err != nil {
-		return nil
+		return nil, err
 	}
 	Body := bytes.NewBuffer(postBody)
-	_, err = http.Post(URL, "application/json", Body)
+
+	resp, err := http.Post(URL, "application/json", Body)
 	if err != nil {
-		return err
+		return nil, err
 	}
-	return nil
-	// defer resp.Body.Close()
-	// respbody, err := ioutil.ReadAll(resp.Body)
-	// return respbody, nil
+	defer resp.Body.Close()
+	respbody, err := ioutil.ReadAll(resp.Body)
+	return respbody, nil
 }
