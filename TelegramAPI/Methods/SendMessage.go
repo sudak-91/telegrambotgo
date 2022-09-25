@@ -29,7 +29,6 @@ type SendMessage struct {
 }
 
 func SendMessageMethod(SecretKey string, Message SendMessage) error {
-
 	URL := fmt.Sprintf("https://api.telegram.org/bot%s/sendMessage", SecretKey)
 	postBody, err := json.Marshal(Message)
 	if err != nil {
