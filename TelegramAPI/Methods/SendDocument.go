@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 
 	types "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
@@ -50,6 +51,7 @@ func SendDocumentMethod(SecretKey string, Document SendDocument) error {
 	if err = json.Unmarshal(respBody, &Result); err != nil {
 		return err
 	}
+	log.Printf("%v", Result)
 	if !Result.Ok {
 		return fmt.Errorf("Has erros: %s", respBody)
 	}
