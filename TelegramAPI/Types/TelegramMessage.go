@@ -58,5 +58,6 @@ type TelegramMessage struct {
 	VoiceChatStarted             *TelegramVoiceChatStarted             `json:"voice_chat_started,omitempty"`
 	VoiceChatEnded               *TelegramVoiceChatEnded               `json:"voice_chat_ended,omitempty"`
 	VoiceChatParticipantsInvited *TelegramVoiceChatParticipantsInvited `json:"voice_chat_participants_invited,omitempty"`
+	WebAppData                   *TelegramWebAppData                   `json:"web_app_data"`
 	ReplyMarkup                  *TelegramInlineKeyboardMarkup         `json:"reply_markup,omitempty"`
 }
