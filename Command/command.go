@@ -5,7 +5,7 @@ import (
 
 	"strings"
 
-	tgtypes "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
+	tgtypes "github.com/sudak-91/telegrambotgo/telegram_api/types"
 )
 
 type CommandHandler interface {
