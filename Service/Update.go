@@ -4,16 +4,16 @@ import (
 	"encoding/json"
 	"fmt"
 
-	types "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
+	types "github.com/sudak-91/telegrambotgo/telegram_api/types"
 )
 
-//Updater - интерфейс для обработки входящих данных от телеграмм бота(webhook)
-//Метод Update является роутером для данных обнолвений
+// Updater - интерфейс для обработки входящих данных от телеграмм бота(webhook)
+// Метод Update является роутером для данных обнолвений
 type Updater interface {
 	Update([]byte) ([]byte, error)
 }
 
-//TelegramUpdater - интерфейс предназначенный для реализации методов обработки входящих данных
+// TelegramUpdater - интерфейс предназначенный для реализации методов обработки входящих данных
 type TelegramUpdater interface {
 	CallbackQueryService(types.TelegramCallbackQuery) ([]byte, error)
 	ChannelPostService(types.TelegramMessage) ([]byte, error)
@@ -37,8 +37,8 @@ type TelegramService struct {
 	TelegramUpdater
 }
 
-//NewTelegramService - конструктор возвращающий объект со стандартной реализацией интерфейса Updater
-//Param Upd - пользовательская реализация интерфейса TelegramUpdater
+// NewTelegramService - конструктор возвращающий объект со стандартной реализацией интерфейса Updater
+// Param Upd - пользовательская реализация интерфейса TelegramUpdater
 func NewTelegramService(Upd TelegramUpdater) *TelegramService {
 	return &TelegramService{
 		TelegramUpdater: Upd,

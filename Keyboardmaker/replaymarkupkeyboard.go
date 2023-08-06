@@ -1,7 +1,7 @@
 package keyboardmaker
 
 import (
-	types "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
+	types "github.com/sudak-91/telegrambotgo/telegram_api/types"
 )
 
 type ReplayMarkupKeyboard struct {

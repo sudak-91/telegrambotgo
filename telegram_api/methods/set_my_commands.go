@@ -8,15 +8,15 @@ import (
 
 	"net/http"
 
-	tgtypes "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
+	tgtypes "github.com/sudak-91/telegrambotgo/telegram_api/types"
 )
 
 type SetMyCommand struct {
-	Commands []tgtypes.TelegramBotCommand `json:"commands"`
+	Commands []tgtypes.BotCommand `json:"commands"`
 }
 
 func (s *SetMyCommand) AddCommand(command, description string) {
-	var Command tgtypes.TelegramBotCommand
+	var Command tgtypes.BotCommand
 	Command.Command = command
 	Command.Description = description
 	s.Commands = append(s.Commands, Command)

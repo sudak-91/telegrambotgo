@@ -8,7 +8,7 @@ import (
 	"log"
 	"net/http"
 
-	types "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
+	types "github.com/sudak-91/telegrambotgo/telegram_api/types"
 )
 
 type GetChatMember struct {
@@ -17,13 +17,13 @@ type GetChatMember struct {
 }
 
 type GetChatMemberResult struct {
-	Ok          bool                      `json:"OK"`
-	Result      *types.TelegramChatMember `json:"result,omitempty"`
-	Status      string                    `json:"status"`
-	Description string                    `json:"description,omitempty"`
+	Ok          bool              `json:"OK"`
+	Result      *types.ChatMember `json:"result,omitempty"`
+	Status      string            `json:"status"`
+	Description string            `json:"description,omitempty"`
 }
 
-func GetChanMemberMethod(ChatID string, UserID int64, Key string) (types.TelegramChatMember, error) {
+func GetChanMemberMethod(ChatID string, UserID int64, Key string) (types.ChatMember, error) {
 	var ChatMember GetChatMember
 	ChatMember.ChatID = ChatID
 	ChatMember.UserID = UserID
@@ -31,29 +31,29 @@ func GetChanMemberMethod(ChatID string, UserID int64, Key string) (types.Telegra
 	URL := fmt.Sprintf("https://api.telegram.org/bot%s/getChatMember", Key)
 	postBody, err := json.Marshal(ChatMember)
 	if err != nil {
-		return types.TelegramChatMember{}, err
+		return types.ChatMember{}, err
 	}
 	Body := bytes.NewBuffer(postBody)
 
 	resp, err := http.Post(URL, "application/json", Body)
 	if err != nil {
-		return types.TelegramChatMember{}, err
+		return types.ChatMember{}, err
 	}
 	defer resp.Body.Close()
 	var Result GetChatMemberResult
 	respbody, err := ioutil.ReadAll(resp.Body)
 	log.Printf("GetChanMember: %s", respbody)
 	if err != nil {
-		return types.TelegramChatMember{}, err
+		return types.ChatMember{}, err
 	}
 	err = json.Unmarshal(respbody, &Result)
 	log.Println(Result)
 	if err != nil {
-		return types.TelegramChatMember{}, err
+		return types.ChatMember{}, err
 	}
 	if Result.Ok != true {
 
-		return types.TelegramChatMember{}, fmt.Errorf("Has error: %s", Result.Description)
+		return types.ChatMember{}, fmt.Errorf("Has error: %s", Result.Description)
 
 	}
 	return *Result.Result, nil

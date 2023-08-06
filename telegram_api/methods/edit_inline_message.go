@@ -8,22 +8,22 @@ import (
 
 	"net/http"
 
-	tgtypes "github.com/sudak-91/telegrambotgo/TelegramAPI/Types"
+	tgtypes "github.com/sudak-91/telegrambotgo/telegram_api/types"
 )
 
 type EditMessageText struct {
-	ChatID                string                                `json:"chat_id,omitempty"`
-	MessageID             int                                   `json:"message_id,omitempty"`
-	InlineMessageID       int                                   `json:"inline_message_id,omitempty"`
-	Text                  string                                `json:"text"`
-	ParseMode             string                                `json:"parse_mode,omitempty"`
-	Entities              []*tgtypes.TelegramMessageEntity      `json:"entites,omitempty"`
-	DisableWebPagePreview bool                                  `json:"disable_web_page_preview,omitempty"`
-	ReplyMarkup           *tgtypes.TelegramInlineKeyboardMarkup `json:"reply_markup,omitempty"`
+	ChatID                string                        `json:"chat_id,omitempty"`
+	MessageID             int                           `json:"message_id,omitempty"`
+	InlineMessageID       int                           `json:"inline_message_id,omitempty"`
+	Text                  string                        `json:"text"`
+	ParseMode             string                        `json:"parse_mode,omitempty"`
+	Entities              []*tgtypes.MessageEntity      `json:"entites,omitempty"`
+	DisableWebPagePreview bool                          `json:"disable_web_page_preview,omitempty"`
+	ReplyMarkup           *tgtypes.InlineKeyboardMarkup `json:"reply_markup,omitempty"`
 }
 type EditMessageTextResult struct {
 	Ok     bool `json:"ok"`
-	Result *tgtypes.TelegramMessage
+	Result *tgtypes.Message
 }
 
 func EditMessageTextMethod(EditMessage EditMessageText, Key string) error {
