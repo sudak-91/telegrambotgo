@@ -52,7 +52,7 @@ type Message struct {
 	MigrateToChatId              int32                          `json:"migrate_to_chat_id,omitempty"`
 	MigrateFromChatId            int32                          `json:"migrate_from_chat_id,omitempty"`
 	PinnedMessage                *Message                       `json:"pinned_message,omitempty"`
-	Invoice                      *TelegramInvoice               `json:"invoice,omitempty"`
+	Invoice                      *Invoice                       `json:"invoice,omitempty"`
 	SuccessfulPayment            *TelegramSuccessfulPayment     `json:"successful_payment,omitempty"`
 	ConnectedWebsite             string                         `json:"connected_website,omitempty"`
 	PassportData                 *TelegramPassportData          `json:"passport_data,omitempty"`
