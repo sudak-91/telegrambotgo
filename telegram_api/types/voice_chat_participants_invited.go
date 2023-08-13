@@ -1,5 +1,5 @@
 package types
 
-type TelegramVoiceChatParticipantsInvited struct {
-	Users []TelegramUser `json:"users,omitempty"`
+type VoiceChatParticipantsInvited struct {
+	Users []User `json:"users,omitempty"`
 }

@@ -1,5 +1,5 @@
 package types
 
-type TelegramWebAppInfo struct {
+type WebAppInfo struct {
 	URL string `json:"url"`
 }

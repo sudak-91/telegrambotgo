@@ -1,6 +1,5 @@
 package types
 
-//TelegramUser struct represents a Telegram user or bot
 type User struct {
 	ID                      int64  `json:"id"`
 	IsBot                   bool   `json:"is_bot"`

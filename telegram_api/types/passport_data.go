@@ -1,7 +1,6 @@
 package types
 
-//@TODO
-type TelegramPassportData struct {
-	Data        []TelegramEncryptedPassportElement `json:"data"`
-	Credentials TelegramEncryptedCredentials       `json:"credentials"`
+type PassportData struct {
+	Data        []EncryptedPassportElement `json:"data"`
+	Credentials EncryptedCredentials       `json:"credentials"`
 }

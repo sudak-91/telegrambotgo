@@ -1,5 +1,5 @@
 package types
 
-type TelegramVoiceChatSheduled struct {
+type VoiceChatSheduled struct {
 	StartDate int32 `json:"start_date"`
 }

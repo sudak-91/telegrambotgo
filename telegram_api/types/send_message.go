@@ -2,7 +2,7 @@ package types
 
 //@TODO Generic for ReplyMarkUp
 
-type TelegramSendMessage struct {
+type SendMessage struct {
 	Method                   string                `json:"method"`
 	ChatID                   int64                 `json:"chat_id"`
 	Text                     string                `json:"text"`
@@ -16,7 +16,7 @@ type TelegramSendMessage struct {
 	ReplyMarkup              *InlineKeyboardMarkup `json:"reply_markup,omitempty"` //InlineKeybordMarkup, ReplyKeyboardMarkup,ReplyKeyboardRemove,ForceReplay
 }
 
-type TelegramSendMessageInlineKeyboardMarkup struct {
+type SendMessageInlineKeyboardMarkup struct {
 	Method                   string                `json:"method"`
 	ChatID                   int64                 `json:"chat_id"`
 	Text                     string                `json:"text"`

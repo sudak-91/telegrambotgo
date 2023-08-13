@@ -1,4 +1,4 @@
 package types
 
-//@TODO
-type TelegramEncryptedCredentials struct{}
+// @TODO: Write structure
+type EncryptedCredentials struct{}

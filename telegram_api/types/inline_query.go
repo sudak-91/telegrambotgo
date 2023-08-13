@@ -1,5 +1,5 @@
 package types
 
-//@TODO
-type TelegramInlineQuery struct {
+// @TODO
+type InlineQuery struct {
 }

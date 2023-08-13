@@ -15,7 +15,7 @@ type CommandHandler interface {
 type ICommandService interface {
 	AddNewCommand(string, CommandHandler)
 	Execute(string, interface{}) ([]byte, error)
-	DefaultAnswer(*tgtypes.TelegramMessage) ([]byte, error)
+	DefaultAnswer(*tgtypes.Message) ([]byte, error)
 }
 
 type telegramCommandService struct {
@@ -55,7 +55,7 @@ func (t *telegramCommandService) Execute(Command string, data interface{}) ([]by
 	return result, err
 }
 
-func (t *telegramCommandService) DefaultAnswer(Message *tgtypes.TelegramMessage) ([]byte, error) {
+func (t *telegramCommandService) DefaultAnswer(Message *tgtypes.Message) ([]byte, error) {
 	command := "default"
 	val, ok := t.commandlist[command]
 	if !ok {

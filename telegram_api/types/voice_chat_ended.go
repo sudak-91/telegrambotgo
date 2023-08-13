@@ -1,5 +1,5 @@
 package types
 
-type TelegramVoiceChatEnded struct {
+type VoiceChatEnded struct {
 	Duration int32 `json:"duration"`
 }

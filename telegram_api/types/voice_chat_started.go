@@ -1,4 +1,4 @@
 package types
 
-//Empty Messages
-type TelegramVoiceChatStarted struct{}
+// Empty Messages
+type VoiceChatStarted struct{}

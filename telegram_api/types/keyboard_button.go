@@ -5,5 +5,5 @@ type KeyboardButton struct {
 	RequestContact  bool                    `json:"request_contact,omitempty"`
 	RequestLocation bool                    `json:"request_location,omitempty"`
 	RequestPoll     *KeyboardButtonPollType `json:"request_poll,omitempty"`
-	WebApp          *TelegramWebAppInfo     `json:"web_app"`
+	WebApp          *WebAppInfo             `json:"web_app"`
 }

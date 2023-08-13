@@ -24,11 +24,11 @@ type Message struct {
 	AuthorSignature              string                         `json:"author_signature,omitempty"`
 	Text                         string                         `json:"text,omitempty"`
 	Entities                     []*MessageEntity               `json:"entities,omitempty"`
-	Animation                    *TelegramAnimation             `json:"animation,omitempty"`
+	Animation                    *Animation                     `json:"animation,omitempty"`
 	Audio                        *Audio                         `json:"audio,omitempty"`
 	Document                     *Document                      `json:"document,omitempty"`
 	Photo                        []*PhotoSize                   `json:"photo,omitempty"`
-	Sticker                      *TelegramSticker               `json:"sticker,omitempty"`
+	Sticker                      *Sticker                       `json:"sticker,omitempty"`
 	Video                        *Video                         `json:"video,omitempty"`
 	VideoNote                    *VideoNote                     `json:"video_note,omitempty"`
 	Voice                        *Voice                         `json:"voice,omitempty"`
@@ -53,9 +53,9 @@ type Message struct {
 	MigrateFromChatId            int32                          `json:"migrate_from_chat_id,omitempty"`
 	PinnedMessage                *Message                       `json:"pinned_message,omitempty"`
 	Invoice                      *Invoice                       `json:"invoice,omitempty"`
-	SuccessfulPayment            *TelegramSuccessfulPayment     `json:"successful_payment,omitempty"`
+	SuccessfulPayment            *SuccessfulPayment             `json:"successful_payment,omitempty"`
 	ConnectedWebsite             string                         `json:"connected_website,omitempty"`
-	PassportData                 *TelegramPassportData          `json:"passport_data,omitempty"`
+	PassportData                 *PassportData                  `json:"passport_data,omitempty"`
 	ProximityAlertTrigered       *ProximityAlertTrigered        `json:"proximity_alert_triggered,omitempty"`
 	ForumTopicCreated            *ForumTopicCreated             `json:"forum_topic_created,omitempty"`
 	ForumTopicClosed             *ForumTopicClosed              `json:"forum_topic_closed,omitempty"`

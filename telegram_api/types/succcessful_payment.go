@@ -1,4 +1,4 @@
 package types
 
-//@TODO
-type TelegramSuccessfulPayment struct{}
+// @TODO
+type SuccessfulPayment struct{}

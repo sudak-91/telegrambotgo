@@ -1,4 +1,4 @@
 package types
 
-//@TODO
-type TelegramEncryptedPassportElement struct{}
+// @TODO
+type EncryptedPassportElement struct{}

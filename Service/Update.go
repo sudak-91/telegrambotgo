@@ -15,22 +15,22 @@ type Updater interface {
 
 // TelegramUpdater - интерфейс предназначенный для реализации методов обработки входящих данных
 type TelegramUpdater interface {
-	CallbackQueryService(types.TelegramCallbackQuery) ([]byte, error)
-	ChannelPostService(types.TelegramMessage) ([]byte, error)
-	ChatJoinRequsetService(types.TelegramChatJoinRequest) ([]byte, error)
-	ChatMemberService(types.TelegramChatMemberUpdated) ([]byte, error)
-	ChosenInlineResultService(types.TelegramChosenInlineResult) ([]byte, error)
-	EditedChannelPostService(types.TelegramMessage) ([]byte, error)
-	EditedMessageService(types.TelegramMessage) ([]byte, error)
-	InlineQueryService(types.TelegramInlineQuery) ([]byte, error)
-	MessageService(types.TelegramMessage) ([]byte, error)
-	MyChatMemberService(types.TelegramChatMemberUpdated) ([]byte, error)
-	PollService(types.TelegramPoll) ([]byte, error)
-	PollAnswerService(types.TelegramPollAnwer) ([]byte, error)
-	PreCheckoutPollService(types.TelegramPreCheckoutQuery) ([]byte, error)
-	ShippingService(types.TelegramShippingQuery) ([]byte, error)
-	ChatUserUpdateService(types.TelegramUpdate) ([]byte, error)
-	Default(types.TelegramUpdate) ([]byte, error)
+	CallbackQueryService(types.CallbackQuery) ([]byte, error)
+	ChannelPostService(types.Message) ([]byte, error)
+	ChatJoinRequsetService(types.ChatJoinRequest) ([]byte, error)
+	ChatMemberService(types.ChatMemberUpdated) ([]byte, error)
+	ChosenInlineResultService(types.ChosenInlineResult) ([]byte, error)
+	EditedChannelPostService(types.Message) ([]byte, error)
+	EditedMessageService(types.Message) ([]byte, error)
+	InlineQueryService(types.InlineQuery) ([]byte, error)
+	MessageService(types.Message) ([]byte, error)
+	MyChatMemberService(types.ChatMemberUpdated) ([]byte, error)
+	PollService(types.Poll) ([]byte, error)
+	PollAnswerService(types.PollAnwer) ([]byte, error)
+	PreCheckoutPollService(types.PreCheckoutQuery) ([]byte, error)
+	ShippingService(types.ShippingQuery) ([]byte, error)
+	ChatUserUpdateService(types.Update) ([]byte, error)
+	Default(types.Update) ([]byte, error)
 }
 
 type TelegramService struct {
@@ -46,7 +46,7 @@ func NewTelegramService(Upd TelegramUpdater) *TelegramService {
 }
 
 func (ts *TelegramService) Update(data []byte) ([]byte, error) {
-	var Update types.TelegramUpdate
+	var Update types.Update
 
 	err := json.Unmarshal(data, &Update)
 	if err != nil {

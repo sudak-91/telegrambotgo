@@ -1,6 +1,6 @@
 package types
 
-type TelegramMaskPosition struct {
+type MaskPosition struct {
 	Point  string  `json:"point"`
 	XShift float32 `json:"x_shift"`
 	YShift float32 `json:"y_shift"`

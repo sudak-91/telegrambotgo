@@ -1,7 +1,7 @@
 package types
 
 // @TODO
-type TelegramPayload struct {
+type Payload struct {
 	Method    string `json:"method"`
 	Parameter interface{}
 }
