@@ -36,7 +36,7 @@ type Message struct {
 	CaptionEntities              []MessageEntity                `json:"caption_entities,omitempty"`
 	Contact                      *Contact                       `json:"contact,omitempty"`
 	Dice                         *Dice                          `json:"dice,omitempty"`
-	Game                         *TelegramGame                  `json:"game,omitempty"`
+	Game                         *Game                          `json:"game,omitempty"`
 	Poll                         *Poll                          `json:"poll,omitempty"`
 	Venue                        *Venue                         `json:"venue,omitempty"`
 	Location                     *Location                      `json:"location,omitempty"`
