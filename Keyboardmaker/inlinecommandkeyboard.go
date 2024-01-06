@@ -31,7 +31,7 @@ func (k *InlineCommandKeyboard) AddSwitchInlineButton(text string, url string, r
 	k.InlineKeyboard[raw][column] = Button
 
 }
-func (k *InlineCommandKeyboard) AddLoginUrlButton(text string, button types.LoginUrl, raw int, column int) {
+func (k *InlineCommandKeyboard) AddLoginUrlButton(text string, button *types.LoginUrl, raw int, column int) {
 	var Button types.InlineKeyboardButton
 	Button.Text = text
 	Button.LoginUrl = button

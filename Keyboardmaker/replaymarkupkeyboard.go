@@ -5,7 +5,7 @@ import (
 )
 
 type ReplayMarkupKeyboard struct {
-	KeyboardMarkup types.ReplayMarkupKeyboard
+	KeyboardMarkup types.ReplyKeyboardMarkup
 }
 
 func (k *ReplayMarkupKeyboard) MakeGrid(raw int, column int) {
@@ -23,6 +23,6 @@ func (k *ReplayMarkupKeyboard) AddButton(text string, raw int, column int) {
 func (k ReplayMarkupKeyboard) ClearButton(raw int, column int) {
 	return
 }
-func (k *ReplayMarkupKeyboard) GetKeyboard() types.ReplayMarkupKeyboard {
+func (k *ReplayMarkupKeyboard) GetKeyboard() types.ReplyKeyboardMarkup {
 	return k.KeyboardMarkup
 }
