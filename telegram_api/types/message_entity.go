@@ -7,5 +7,5 @@ type MessageEntity struct {
 	Url           string `json:"url,omitempty"`
 	User          *User  `json:"user,omitempty"`
 	Language      string `json:"language,omitempty"`
-	CustomEmojiID string `json:"custom_emoji_id, omitempty"`
+	CustomEmojiID string `json:"custom_emoji_id,omitempty"`
 }
