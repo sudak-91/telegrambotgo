@@ -12,7 +12,7 @@ type InputInvoiceMessageContent struct {
 	ProviderData              string        `json:"provider_data,omitempty"`
 	PhotoUrl                  string        `json:"photo_url,omitempty"`
 	PhotoSize                 int32         `json:"photo_size,omitempty"`
-	PhotoWidth                int32         `json:photo_width,omitempty"`
+	PhotoWidth                int32         `json:"photo_width,omitempty"`
 	NeedName                  bool          `json:"need_name,omitempty"`
 	NeedPhoneNumber           bool          `json:"need_phone_number,omitempty"`
 	NeedEmail                 bool          `json:"need_email,omitempty"`

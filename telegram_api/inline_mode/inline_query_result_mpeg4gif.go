@@ -14,6 +14,6 @@ type InlineQueryResultMpeg4Gif struct {
 	Caption             string                      `json:"caption,omitempty"`
 	ParseMode           string                      `json:"pars_mode,omitempty"`
 	CaptionEntities     []*types.MessageEntity      `json:"caption_entities,omitempty"`
-	ReplyMarkup         *types.InlineKeyboardMarkup `json:"reply_markup, omitempty"`
+	ReplyMarkup         *types.InlineKeyboardMarkup `json:"reply_markup,omitempty"`
 	InputMessageContent *InputMessageContent        `json:"input_message_content"`
 }

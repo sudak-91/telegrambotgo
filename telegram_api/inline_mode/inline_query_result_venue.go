@@ -17,5 +17,5 @@ type InlineQueryResultVenue struct {
 	InputMessageContent *InputMessageContent        `json:"input_message_content,omitempty"`
 	ThumbUrl            string                      `json:"thumb_url,omitempty"`
 	ThumbWidth          int32                       `json:"thumb_width,omitempty"`
-	ThumbHeight         int32                       `json:"thumb_height,omitepty"`
+	ThumbHeight         int32                       `json:"thumb_height,omitempty"`
 }

@@ -6,7 +6,7 @@ type InlineQueryResultArticle struct {
 	Type                string                      `json:"type"`
 	ID                  string                      `json:"id"`
 	Title               string                      `json:"title"`
-	InputMessageContent *InputMessageContent        `json:"input_message_content"`
+	InputMessageContent any                         `json:"input_message_content"`
 	ReplyMarkup         *types.InlineKeyboardMarkup `json:"reply_markup,omitempty"`
 	URL                 string                      `json:"utl,omitempty"`
 	HideUrl             bool                        `json:"hide_url,omitempty"`
